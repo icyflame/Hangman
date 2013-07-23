@@ -16,13 +16,16 @@ wordIs = '';
 function rc(str,ref,char)
 {
     
+    //rc is for replace charachters.
+
+//It will take the string "str" and then compare it with the string "ref". Wherever the character "char"
+//occurs, that will be replaced with that character in the place of the hyphen that is already there.
+    
     for(i=0;i<ref.length;i++)
         
         if(ref[i] === char)
             
             str = setcharat(str,char,i);
-    
-    //alert(str);
     
     return str;
             
@@ -94,11 +97,6 @@ function gen() {
     word = '';
 
     wordIs = listOfWords[a];   
-
-    //alert(wordIs);
-    
-    
-//    wordIs = "together";
     
     a = wordIs.split("");
 
@@ -107,8 +105,6 @@ function gen() {
         word += "-";
 
     }
-
-    //alert(a);
 
     document.getElementById("toguess").innerHTML = word;
 
@@ -153,8 +149,6 @@ function verify() {
     ag.push(b);
     
     document.getElementById("lettersag").innerHTML += b + ", ";
-
-    //alert(ag);
     
     flag = true;
 
@@ -166,9 +160,8 @@ function verify() {
             
             flag = false;
 
-            gai.push(b);     
-            
-            //word = setcharat(word,b,i);           
+            gai.push(b);          
+                     
           
         }
 
@@ -177,26 +170,8 @@ function verify() {
     if(flag)
         
        attrem -= 1;    
-      
-    //alert("Score is:" + score);
-
-    //alert("attempts remaining:" + attrem);
-
-    //alert(wordIs);
-
-    //word = new Array();
-
-    /*for (i in wordIs) 
-
-        if (wordIs[i] === b)
-
-            word = setcharat(word,b,i);*/
     
-    word = rc(word,wordIs,b);
-
-    //alert("output is:" + word);
-
-    //alert("word now is:" + word);               
+    word = rc(word,wordIs,b);           
 
     update();
     
@@ -223,8 +198,4 @@ function verify() {
         
         
     }
-
-    //alert("guessed already:" + ag);
-
-    //alert("guessed already and in word also:" + gai);
 }
